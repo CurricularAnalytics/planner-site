@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Control Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="flex flex-col min-h-screen">
+      <!-- Top Header -->
+      <header class="bg-[#C8102E] text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="bg-white text-[#C8102E] rounded-full h-9 w-9 flex items-center justify-center font-bold">
+            A
+          </div>
+          <span class="font-semibold text-[15px] uppercase">ADMINISTRATOR NAME</span>
+        </div>
+        <div class="text-[15px] font-medium">The University Of Arizona</div>
+      </header>
+
+      <div class="flex flex-1">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-[#071D59] text-white min-h-screen flex flex-col">
+          <div class="px-5 py-6 border-b border-[#132a69]">
+            <div class="flex items-start gap-4">
+              <div class="bg-[#C8102E] rounded-full h-10 w-10 flex items-center justify-center text-white font-bold shrink-0">
+                A
+              </div>
+              <div class="leading-tight">
+                <p class="text-[15px] font-semibold uppercase">Administrator</p>
+                <p class="text-[15px] font-semibold uppercase">Name</p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="flex-1 px-3 py-4">
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium bg-[#C8102E] text-white">
+              CONTROL PANEL
+            </button>
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium hover:bg-[#102b74]">
+              MANAGE WEBSITE
+            </button>
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium hover:bg-[#102b74]">
+              MANAGE PLANNER
+            </button>
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium hover:bg-[#102b74]">
+              MANAGE SERVICES
+            </button>
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium hover:bg-[#102b74]">
+              SUPPORT
+            </button>
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium hover:bg-[#102b74]">
+              CONTACTS
+            </button>
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium hover:bg-[#102b74]">
+              SETTINGS
+            </button>
+            <button class="w-full text-left px-6 py-3.5 mb-2 rounded-xl text-[15px] font-medium hover:bg-[#102b74]">
+              SYSTEM ADMIN
+            </button>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 bg-[#F3F4F6] px-10 py-8">
+          <div class="mb-8">
+            <h1 class="text-[28px] md:text-[34px] font-bold text-[#123B73]">
+              System Control Panel
+            </h1>
+            <p class="text-gray-600 text-[18px] mt-2">
+              Administrative overview with live security and system monitoring.
+            </p>
+          </div>
+
+          <!-- Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+            <div class="rounded-2xl shadow-sm border border-gray-200 p-6 bg-red-50 border-l-4 border-l-red-500">
+              <div class="flex items-start gap-3">
+                <div class="text-xl mt-[2px]">⚠️</div>
+                <div>
+                  <h3 class="text-[18px] font-semibold text-red-600">3 Security Alerts</h3>
+                  <p class="text-gray-600 mt-2 text-[15px]">
+                    Brute force or suspicious activity detected.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl shadow-sm border border-gray-200 p-6 bg-blue-50 border-l-4 border-l-blue-500">
+              <div class="flex items-start gap-3">
+                <div class="text-xl mt-[2px]">💠</div>
+                <div>
+                  <h3 class="text-[18px] font-semibold text-blue-600">System Health: Stable</h3>
+                  <p class="text-gray-600 mt-2 text-[15px]">
+                    All core services running normally.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl shadow-sm border border-gray-200 p-6 bg-green-50 border-l-4 border-l-green-500">
+              <div class="flex items-start gap-3">
+                <div class="text-xl mt-[2px]">🔒</div>
+                <div>
+                  <h3 class="text-[18px] font-semibold text-green-600">Firewall Active</h3>
+                  <p class="text-gray-600 mt-2 text-[15px]">
+                    Web firewall actively blocking malicious IPs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Login Attempts -->
+          <section class="mb-10">
+            <h2 class="text-[20px] md:text-[22px] font-bold text-[#123B73] mb-4">
+              Recent Login Attempts
+            </h2>
+
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-200">
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                  <thead class="bg-[#0C3C78] text-white">
+                    <tr>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">User</th>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">IP Address</th>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">Time</th>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-gray-200 bg-white">
+                      <td class="px-6 py-4 text-[15px] text-gray-700">advisor@arizona.edu</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">128.196.24.101</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">11/30/2025 13:42</td>
+                      <td class="px-6 py-4 text-[15px] font-semibold text-green-600">Success</td>
+                    </tr>
+                    <tr class="border-t border-gray-200 bg-white">
+                      <td class="px-6 py-4 text-[15px] text-gray-700">student1@arizona.edu</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">198.51.100.22</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">11/30/2025 13:10</td>
+                      <td class="px-6 py-4 text-[15px] font-semibold text-green-600">Success</td>
+                    </tr>
+                    <tr class="border-t border-gray-200 bg-white">
+                      <td class="px-6 py-4 text-[15px] text-gray-700">unknown</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">203.0.113.89</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">11/30/2025 12:55</td>
+                      <td class="px-6 py-4 text-[15px] font-semibold text-red-600">Failed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Detected Security Events -->
+          <section>
+            <h2 class="text-[20px] md:text-[22px] font-bold text-[#123B73] mb-4">
+              Detected Security Events
+            </h2>
+
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-200">
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                  <thead class="bg-[#0C3C78] text-white">
+                    <tr>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">Event Type</th>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">IP Address</th>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">Attempts</th>
+                      <th class="px-6 py-4 text-left text-[16px] font-semibold">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-gray-200 bg-white">
+                      <td class="px-6 py-4 text-[15px] text-gray-700">Brute Force Attempt</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">203.0.113.89</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">15</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">11/30/2025 12:55</td>
+                    </tr>
+                    <tr class="border-t border-gray-200 bg-white">
+                      <td class="px-6 py-4 text-[15px] text-gray-700">Suspicious Login Location</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">178.45.33.190</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">3</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">11/29/2025 21:43</td>
+                    </tr>
+                    <tr class="border-t border-gray-200 bg-white">
+                      <td class="px-6 py-4 text-[15px] text-gray-700">Multiple Failed Logins</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">198.18.4.66</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">7</td>
+                      <td class="px-6 py-4 text-[15px] text-gray-700">11/29/2025 17:22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
