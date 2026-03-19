@@ -1,13 +1,21 @@
 <template>
-  <Dashboard />
+  <TopHeader />
+  <NavigationBar />
+  <Breadcrumb />
+
+  <router-view />
 </template>
 
 <script>
-import Dashboard from "./views/Dashboard.vue"
+import TopHeader from "./components/TopHeader.vue"
+import NavigationBar from "./components/NavigationBar.vue"
+import Breadcrumb from "./components/Breadcrumb.vue"
 
 export default {
   components:{
-    Dashboard
+    TopHeader,
+    NavigationBar,
+    Breadcrumb
   }
 }
 </script>

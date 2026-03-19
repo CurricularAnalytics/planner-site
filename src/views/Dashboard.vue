@@ -2,12 +2,8 @@
 
 <div class="dashboard-page">
 
-  <TopHeader />
-  <NavigationBar />
-  <Breadcrumb />
-
   <div class="content">
-    <DashboardCards />
+    <DashboardCards :cards="cards" />
   </div>
 
 </div>
@@ -16,18 +12,43 @@
 
 <script>
 
-import TopHeader from "../components/TopHeader.vue"
-import NavigationBar from "../components/NavigationBar.vue"
-import Breadcrumb from "../components/Breadcrumb.vue"
 import DashboardCards from "../components/DashboardCards.vue"
 
 export default{
-  components:{
-    TopHeader,
-    NavigationBar,
-    Breadcrumb,
-    DashboardCards
-  }
+
+components:{
+  DashboardCards
+},
+
+data(){
+return{
+
+/* Dummy data (replace with backend later) */
+
+cards:[
+  { label:"CURRENT STUDENTS", value:231, route:"/tables" },
+  { label:"CURRENT APPOINTMENTS", value:10, route:"/appointments" },
+  { label:"CURRENT CLASSES INFO", value:14, route:"/forms" },
+  { label:"COURSE CATALOGUE", value:50, route:"/website" }
+]
+
+}
+},
+
+mounted(){
+
+/* 🔌 Future backend integration */
+
+ /*
+ fetch("/api/dashboard")
+   .then(res => res.json())
+   .then(data=>{
+     this.cards = data
+   })
+ */
+
+}
+
 }
 
 </script>
