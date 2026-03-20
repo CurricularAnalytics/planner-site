@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Student Dashboard</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="circle" id="headercircle">S</div>
+            <span id="userinfo">STUDENT NAME</span>
+            <span id="school">The University of Arizona</span>
+        </header>
+        <div id="contentdiv">
+            <div class="sidebar">
+                <div id="studentname">
+                    <h4 class="majorhead">STUDENT NAME</h4>
+                </div>
+                <hr class="divide">
+                <div id="status">
+                    <h2>STATUS:</h2>
+                    <h3>ON TRACK</h3>
+                </div>
+                <hr class="divide">
+                <a href="">COURSE PLANNER</a>
+                <a href="">DEGREE AUDIT</a>
+                <a href="">COURSE SEARCH</a>
+                <a href="">ADVISOR SCHEDULING</a>
+            </div>
+            <main class="main">
+                <div id="mainbody">
+                    <div id="summarydiv">
+                        <h1 class="mainhead">Summary</h1>
+                        <p class="description">Student Progress and Requirements</p>
+                        <div class="container">
+                            <p class="sumreq">Credits completed<br><span class="sumstat">85</span><br>of 120 required</p>
+                            <p class="sumreq">Current GPA<br><span class="sumstat">3.9</span><br>out of 4.0</p>
+                            <p class="sumreq">Graduation Year<br><span class="sumstat">2027</span><br>Spring Semester</p>
+                            <p class="sumreq">Current Standing<br><span class="sumstat">Junior</span><br>Year 3</p>
+                            <p class="sumreq">Major<br><span class="sumstat">Computer Science</span><br>Bachelors of Science</p>
+                        </div>
+                    </div>
+                    <div id="semesterdiv">
+                        <h1 class="mainhead">Current Semester</h1>
+                        <p class="description">Breakdown of Ongoing Semester</p>
+                        <div class="container">
+                        <table id="coursetable">
+                            <thead id="coursethead">
+                                <tr>
+                                    <td class="coursehead">COURSE</th>
+                                    <td class="coursehead">INSTRUCTOR</th>
+                                    <td class="coursehead">CATEGORY</th>
+                                    <td class="coursehead">CREDITS</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td class="courseinfo"><span class="coursecode">CSC 335</span>Object Oriented Programming</td>
+                                <td class="courseinst">A. Smith</td>
+                                <td class="coursecat"><mark class="majorclass">CSC Core</mark></td>
+                                <td class="coursehour">3</td>
+                            </tr>
+                                <td class="courseinfo"><span class="coursecode">CSC 352</span>Systems Programming & Unix</td>
+                                <td class="courseinst">R. Johnson</td>
+                                <td class="coursecat"><mark class="majorclass">CSC Core</mark></td>
+                                </div>
+                                <td class="coursehour">3</td>
+                            <tr>
+                                <td class="courseinfo"><span class="coursecode">SPAN 101</span>First Semester Spanish</td>
+                                <td class="courseinst">M. Alvarez</td>
+                                <td class="coursecat"><mark class="language">Language</mark></td>
+                                <td class="coursehour">4</td>
+                            </tr>
+                            <tr>
+                                <td class="courseinfo"><span class="coursecode">DNC 101</span>Dance Appreciation </td>
+                                <td class="courseinst">P. Williams</td>
+                                <td class="coursecat"><mark class="elective">Elective</mark></td>
+                                <td class="coursehour">3</td>
+                            </tr>
+                            <tfoot id="coursefoot">
+                                <tr>
+                                    <td id="total">Total Credit Hours:</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="coursehour">13</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        </div>
+                    </div>
+                    <div id="alertdiv">
+                        <h1 class="mainhead">Alerts & Notifications</h1>
+                        <p class="description">Urgent Reminders and Important Dates</p>
+                        <div class="container">
+                            <ul id="alertlist">
+                                <div>
+                                    <li id="reddot" class="notification">Account hold - unpaid balance of $240</li>
+                                    <p class="notifdescr">Urgent · resolve to register</p>
+                                    <hr class="notifsep">
+                                </div>
+                                <div>
+                                    <li id="bluedot" class="notification">Registration window opens in 16 days</li>
+                                    <p class="notifdescr">April 1, 2026</p>
+                                    <hr class="notifsep">
+                                </div>
+                                <div>
+                                    <li id="greendot" class="notification">Advisor note from Dr. Smith</li>
+                                    <p class="notifdescr">2 days ago</p>
+                                    <hr class="notifsep">
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
