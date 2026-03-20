@@ -1,2 +1,1 @@
-# planner-site
-Degree planner repo -- front-end
+Committed working first page HTML, still working on the Vue version.
