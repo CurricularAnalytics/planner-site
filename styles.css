@@ -1,0 +1,175 @@
+body{
+    font-family: sans-serif;
+    background-color: whitesmoke;
+    margin: 0px;
+}
+#contentdiv{
+    display: flex;
+    align-items: stretch;
+}
+
+/* Header Styling */
+.header{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(171, 5, 32);
+    color: white;
+}
+#userinfo{
+    margin-left: 50px;
+}
+#school{
+    float: right;
+    margin-right: 15px;
+}
+.circle{
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#headercircle{
+    margin-left: 15px;
+    position: relative;
+    top: 17.5px;
+    color: rgb(171, 5, 32);
+}
+/* Sidebar Styling */
+.sidebar{
+    color: white;
+    width: 300px;
+    background-color: rgb(12, 35, 75);
+}
+.majorhead{
+    margin-left: 25px;
+}
+#status{
+    margin-left: 25px;
+}
+.sidebar a{
+    color: white;
+    font-size: 20px;
+    text-decoration: None;
+    padding: 10px 0px;
+    margin: 20px 25px;
+    display: inline-block;
+    white-space: nowrap;
+}
+.sidebar a:hover{
+    background-color: rgb(20, 50, 102);
+    padding: 15px;
+    border-radius: 25px;
+}
+.divide{
+    width: 85%;
+    border-color: rgb(20, 50, 102)
+}
+
+/* Main Body Styling */
+.main{
+    display: flex;
+}
+#mainbody{
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+.mainhead{
+    margin-bottom: -10px;
+    color: rgb(20, 50, 102);
+}
+.description{
+    font-size: 20px;
+}
+.mainhead{
+    font-size: 40px;
+}
+.container{
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 25px;
+    width: 1100px;
+}
+
+    /* Summary Styling */
+.sumreq{
+    padding: 15px 35px;
+    font-size: 15px;
+    color: rgb(73, 72, 72);
+    display: inline-block;
+}
+.sumstat{
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+    /* Semester Styling */
+#coursetable{
+    border-collapse: collapse;
+    width: 100%
+}
+#coursetable td{
+    padding: 15px;
+}
+.courseinst{
+    word-spacing: 5px;
+}
+.coursecode{
+    display: block;
+    font-size: 15px;
+    color: gray;
+}
+.coursehead{
+    color: gray
+}
+#coursethead{
+    border-bottom: 1px solid lightgray
+}
+#coursefoot td{
+    border-top: 1px solid lightgray;
+}
+#coursetable tr:not(:last-child){
+    border-bottom: 1px solid lightgray
+}
+mark{
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+.majorclass{
+    background-color: rgb(135, 206, 250, 0.25);
+}
+.elective{
+    background-color: rgb(216, 112, 147, 0.25)
+}
+.language{
+    background-color: rgb(255, 165, 0, 0.25)
+}
+.coursehour{
+    text-align: center;
+}
+/*  Alerts Styling */
+.notifdescr{
+    color: gray;
+    font-size: 15px;
+    margin: 5px
+}
+.notifsep{
+    position: relative;
+    right: 20px;
+}
+.notification::marker{
+    font-size: 25px;
+}
+#reddot::marker{
+    color: red;
+}
+#greendot::marker{
+    color: green;
+}
+#bluedot::marker{
+    color: blue;
+}
