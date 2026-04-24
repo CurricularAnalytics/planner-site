@@ -25,9 +25,7 @@ const emit = defineEmits(['close'])
           <span class="auditcredits">{{ section.earned }} / {{ section.required }} credits</span>
         </div>
         <div class="progressbar">
-          <div class="progressfill" :class="section.fillClass" :style="{ width: section.fillWidth }">
-            {{ section.fillWidth }}
-          </div>
+          <div class="progressfill" :class="section.fillClass" :style="{ width: section.fillWidth }"></div>
         </div>
       </div>
 

@@ -1,7 +1,9 @@
 <script setup>
+import { ref } from 'vue'
 import BasePopup from './BasePopup.vue'
 import { advisor } from '../../data/data.js'
 const emit = defineEmits(['close'])
+const showFeaturePopup = ref(false)
 </script>
 
 <template>
@@ -35,11 +37,11 @@ const emit = defineEmits(['close'])
 
     <!-- Action buttons -->
     <div class="advisor-actions">
-      <button class="btn-primary">
+      <button class="btn-primary" @click="showFeaturePopup = true">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Schedule a Meeting
       </button>
-      <button class="btn-secondary">
+      <button class="btn-secondary" @click="showFeaturePopup = true">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Send a Message
       </button>
@@ -47,6 +49,13 @@ const emit = defineEmits(['close'])
 
     <p class="response-time">Response time: Usually within 24-48 hours</p>
   </BasePopup>
+
+  <div v-if="showFeaturePopup" class="feature-popup-overlay" @click.self="showFeaturePopup = false">
+    <div class="feature-popup-box">
+      <button class="feature-popup-close" @click="showFeaturePopup = false">✕</button>
+      <p class="feature-popup-text">Feature coming soon</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>

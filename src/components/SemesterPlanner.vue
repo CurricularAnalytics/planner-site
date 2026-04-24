@@ -1,11 +1,13 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { semesters } from '../data/data.js'
 
 const emit = defineEmits(['open-popup'])
 
-const saveLabel = ref('⊡ Save Plan')
-const isSaving  = ref(false)
+const saveLabel   = ref('⊡ Save Plan')
+const isSaving    = ref(false)
+const showCoursePopup = ref(false)
+watch(showCoursePopup, val => { document.body.style.overflow = val ? 'hidden' : '' })
 
 function savePlan() {
   localStorage.setItem('plan_saved_at', new Date().toISOString())
@@ -37,11 +39,15 @@ function exportPlan() {
 <template>
   <div class="container" id="pathwaydiv">
     <div id="pathwayheader">
-      <h2 class="cardhead" style="margin-bottom:0">SEMESTER PLANNER</h2>
+      <h2 class="cardhead" style="margin-bottom:0">CURRENT PLAN</h2>
       <div id="pathwayactions">
         <button class="pathwaybtn" @click="exportPlan">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Export Plan
+        </button>
+        <button class="pathwaybtn" @click="showCoursePopup = true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg>
+          Retrieve Previous Plan
         </button>
         <button class="pathwaybtn" :disabled="isSaving" @click="savePlan">{{ saveLabel }}</button>
         <button class="pathwaybtn pathwaybtnprimary" @click="emit('open-popup', 'editplan')">
@@ -56,7 +62,7 @@ function exportPlan() {
         <span class="legenditem"><span class="legendswatch majorelective"></span>MAJOR ELECTIVE</span>
         <span class="legenditem"><span class="legendswatch gened"></span>GEN ED</span>
         <span class="legenditem"><span class="legendswatch elective"></span>FREE ELECTIVE</span>
-        <span class="legenditem"><span class="legendswatch language"></span>LANGUAGE</span>
+        <span class="legenditem"><span class="legendswatch language"></span>MAJOR FOUNDATION</span>
       </div>
     </div>
     <div id="semestercols">
@@ -73,13 +79,21 @@ function exportPlan() {
           :key="course.code"
           class="coursecard"
           :class="course.type"
+          @click="showCoursePopup = true"
         >
           <span class="cardcode">{{ course.code }}</span>
           <span class="cardname">{{ course.name }}</span>
-          <span class="cardcredits">{{ course.credits }} cr</span>
+          <span class="cardcredits">{{ course.credits }} credit</span>
         </div>
         <div class="semcolfooter">{{ sem.totalCredits }} CREDITS</div>
       </div>
+    </div>
+  </div>
+
+  <div v-if="showCoursePopup" class="feature-popup-overlay" @click.self="showCoursePopup = false">
+    <div class="feature-popup-box">
+      <button class="feature-popup-close" @click="showCoursePopup = false">✕</button>
+      <p class="feature-popup-text">Feature coming soon</p>
     </div>
   </div>
 </template>
@@ -180,19 +194,18 @@ function exportPlan() {
 }
 
 .legendswatch.gened {
-    background-color: rgb(185, 110, 200);
+    background-color: rgb(190, 74, 52);
 }
 
 #semestercols {
     display: flex;
     gap: 12px;
-    overflow-x: auto;
     padding-bottom: 5px;
 }
 
 .semcol {
-    min-width: 170px;
     flex: 1;
+    min-width: 0;
 }
 
 .semcoltitle {
@@ -214,6 +227,11 @@ function exportPlan() {
     border-radius: 10px;
     padding: 10px 12px;
     margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.coursecard:hover {
+    filter: brightness(0.92);
 }
 
 .coursecard.majorclass,
@@ -241,7 +259,7 @@ function exportPlan() {
 }
 
 .coursecard.gened {
-    background-color: rgb(185, 110, 200);
+    background-color: rgb(190, 74, 52);
 }
 
 .cardcode,

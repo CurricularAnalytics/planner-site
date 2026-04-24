@@ -12,8 +12,11 @@ const emit = defineEmits(['open-popup'])
         <p class="reqtitle"><strong>{{ req.bold }}</strong> {{ req.rest }}</p>
         <a class="viewcourses" href="#" @click.prevent="emit('open-popup', 'audit')">VIEW COURSES ></a>
       </div>
-      <div class="progressbar">
-        <div class="progressfill" :class="req.fillClass" :style="{ width: req.width }">{{ req.width }}</div>
+      <div class="progressbarwrap">
+        <div class="progressbar">
+          <div class="progressfill" :class="req.fillClass" :style="{ width: req.width }"></div>
+        </div>
+        <span class="progresspct">{{ req.width }}</span>
       </div>
     </div>
   </div>
@@ -47,5 +50,24 @@ const emit = defineEmits(['open-popup'])
     color: gray;
     font-size: 13px;
     text-decoration: none;
+}
+
+.progressbarwrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progressbarwrap .progressbar {
+    flex: 1;
+}
+
+.progresspct {
+    font-size: 13px;
+    font-weight: bold;
+    color: gray;
+    white-space: nowrap;
+    min-width: 36px;
+    text-align: right;
 }
 </style>

@@ -1,8 +1,10 @@
 <script setup>
+import { ref } from 'vue'
 import BasePopup from './BasePopup.vue'
 import { semesters, professors, currentSemesterTitle } from '../../data/data.js'
 
 const emit = defineEmits(['close'])
+const showFeaturePopup = ref(false)
 
 const currentSemester = semesters.find(s => s.title === currentSemesterTitle)
 const courses = currentSemester.courses.map(c => ({
@@ -22,7 +24,7 @@ const courses = currentSemester.courses.map(c => ({
           <p class="prof-name">{{ course.professor }}</p>
           <p class="prof-avail">{{ course.availability }}</p>
         </div>
-        <button class="book-btn">Book</button>
+        <button class="book-btn" @click="showFeaturePopup = true">Book</button>
       </div>
     </div>
     <div class="meeting-info">
@@ -35,6 +37,13 @@ const courses = currentSemester.courses.map(c => ({
       </ul>
     </div>
   </BasePopup>
+
+  <div v-if="showFeaturePopup" class="feature-popup-overlay" @click.self="showFeaturePopup = false">
+    <div class="feature-popup-box">
+      <button class="feature-popup-close" @click="showFeaturePopup = false">✕</button>
+      <p class="feature-popup-text">Feature coming soon</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>

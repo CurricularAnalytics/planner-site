@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { studentProfile } from './data/data.js'
 import DegreeProgress    from './components/DegreeProgress.vue'
 import RequirementsPanel from './components/RequirementsPanel.vue'
@@ -15,6 +15,8 @@ import DegreeAuditPopup  from './components/popups/DegreeAuditPopup.vue'
 const activePopup  = ref(null)
 const openPopup    = (name) => { activePopup.value = name }
 const closePopup   = ()     => { activePopup.value = null }
+
+watch(activePopup, val => { document.body.style.overflow = val ? 'hidden' : '' })
 
 const showBell    = ref(false)
 const showMessage = ref(false)

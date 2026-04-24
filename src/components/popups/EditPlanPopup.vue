@@ -10,7 +10,8 @@ const form = reactive({
   classes:  localStorage.getItem('plan_classesinput')  ?? planDefaults.classes,
   gradYear: localStorage.getItem('plan_gradyearinput') ?? planDefaults.gradYear,
   location: localStorage.getItem('plan_location')      ?? planDefaults.location,
-  hasMinor: localStorage.getItem('plan_hasminor') === 'true',
+  hasMinor:  localStorage.getItem('plan_hasminor')  === 'true',
+  hasSummer: localStorage.getItem('plan_hassummer') === 'true',
 })
 
 function save() {
@@ -19,6 +20,7 @@ function save() {
   localStorage.setItem('plan_gradyearinput', form.gradYear)
   localStorage.setItem('plan_location',      form.location)
   localStorage.setItem('plan_hasminor',      form.hasMinor)
+  localStorage.setItem('plan_hassummer',     form.hasSummer)
   emit('close')
 }
 </script>
@@ -51,9 +53,12 @@ function save() {
     <div class="editformrow">
       <label class="checklabel"><input type="checkbox" v-model="form.hasMinor"> I have a minor</label>
     </div>
+    <div class="editformrow">
+      <label class="checklabel"><input type="checkbox" v-model="form.hasSummer"> I am willing to take summer classes</label>
+    </div>
     <div class="editactions">
       <button class="editcancelbtn" @click="emit('close')">Cancel</button>
-      <button class="popupbtn" @click="save">Save Changes</button>
+      <button class="popupbtn" @click="save">Generate New Plan</button>
     </div>
   </BasePopup>
 </template>
