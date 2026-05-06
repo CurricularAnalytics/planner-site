@@ -24,12 +24,13 @@ export default{
     return{
       navItems:[
         {name:"DASHBOARD", icon:"fas fa-home", route:"/"},
+        {name:"STUDENTS",icon:"fas fa-user-graduate", route:"/students"},
         {name:"WEBSITE", icon:"fas fa-globe", route:"/website"},
         {name:"FORMS", icon:"fas fa-file-alt", route:"/forms"},
-        {name:"DATA TABLES", icon:"fas fa-database", route:"/tables"},
+        //{name:"DATA TABLES", icon:"fas fa-database", route:"/tables"},
         {name:"CHARTS", icon:"fas fa-chart-line", route:"/charts"},
-        {name:"APPOINTMENTS", icon:"fas fa-calendar", route:"/appointments"},
-        {name:"MORE", icon:"fas fa-ellipsis-h", route:"/more"}
+        {name:"APPOINTMENTS", icon:"fas fa-calendar", route:"/appointments"}
+        //{name:"MORE", icon:"fas fa-ellipsis-h", route:"/more"}
 ]
     }
   }
@@ -42,7 +43,7 @@ export default{
   background:#0c3c60;
   display:flex;
   justify-content:space-around;
-  padding:20px 0;
+  padding:5px 0;
   color:white;
 }
 
@@ -53,8 +54,8 @@ export default{
   font-size:12px;
   cursor:pointer;
 
-  text-decoration:none;   /* remove underline */
-  color:white;            /* text color */
+  text-decoration:none;   
+  color:white;            
   padding:15px 30px;
 }
 
@@ -75,8 +76,8 @@ export default{
 }
 
 .icon{
-  background:#e6e6e6;     /* light gray circle */
-  color:#0c3c60;          /* dark blue icon */
+  background:#e6e6e6;     
+  color:#0c3c60;          
   width:45px;
   height:45px;
   border-radius:50%;

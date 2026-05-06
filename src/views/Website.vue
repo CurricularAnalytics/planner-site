@@ -177,7 +177,7 @@ instructor:"Dr. Martinez"
 <style scoped>
 
 .catalogue-page{
-  padding:40px;
+  padding:5px 10px;
   max-width:1200px;
   margin:auto;
 }

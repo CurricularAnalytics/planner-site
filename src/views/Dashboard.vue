@@ -26,7 +26,7 @@ return{
 /* Dummy data (replace with backend later) */
 
 cards:[
-  { label:"CURRENT STUDENTS", value:231, route:"/tables" },
+  { label:"CURRENT STUDENTS", value:231, route:"/students" },
   { label:"CURRENT APPOINTMENTS", value:10, route:"/appointments" },
   { label:"CURRENT CLASSES INFO", value:14, route:"/forms" },
   { label:"COURSE CATALOGUE", value:50, route:"/website" }

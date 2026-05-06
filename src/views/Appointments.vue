@@ -82,7 +82,7 @@ return text.charAt(0).toUpperCase() + text.slice(1)
 <style scoped>
 
 .appointments-container{
-  padding:40px;
+  padding:10px 40px;
   max-width:1200px;
   margin:auto;
 }

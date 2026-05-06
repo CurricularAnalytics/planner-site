@@ -2,26 +2,40 @@
 
 <div class="table-page">
 
-<h2 class="title">Current Students</h2>
+  <div class="header-row">
+    <h2 class="title">Current Students</h2>
 
-<div class="table-container">
+    <div class="search-bar">
+      <div class="search-input-wrapper">
+        <span class="search-icon">
+          <i class="fas fa-search"></i>
+        </span>
+        <input
+          type="text"
+          v-model="searchQuery"
+          placeholder="Search by name, ID, or major..."
+        />
+      </div>
+    </div>
+  </div>
 
-<table>
+  <div class="table-container">
+    <table>
 
-<thead>
-<tr>
-<th>NAME</th>
-<th>STUDENT ID</th>
-<th>MAJOR</th>
-<th>PROGRESS</th>
-<th>LAST LOGIN</th>
-<th>ADVISOR</th>
-</tr>
-</thead>
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>STUDENT ID</th>
+          <th>MAJOR</th>
+          <th>PROGRESS</th>
+          <th>LAST LOGIN</th>
+          <th>ADVISOR</th>
+        </tr>
+      </thead>
 
 <tbody>
 
-<tr v-for="student in students" :key="student.id">
+<tr v-for="student in filteredStudents" :key="student.id">
 
 <td>
 {{ student.name }}
@@ -73,6 +87,7 @@ export default{
 data(){
 return{
 
+searchQuery: "",
 /* Dummy data (replace with backend later) */
 
 students:[
@@ -132,6 +147,22 @@ advisor:"Dr. Nguyen"
 }
 },
 
+computed:{
+  filteredStudents(){
+    if(!this.searchQuery){
+      return this.students
+    }
+
+    const query = this.searchQuery.toLowerCase()
+
+    return this.students.filter(student =>
+      student.name.toLowerCase().includes(query) ||
+      student.id.toLowerCase().includes(query) ||
+      student.major.toLowerCase().includes(query)
+    )
+  }
+},
+
 methods:{
 
 progressColor(progress){
@@ -157,13 +188,13 @@ return "red"
 <style scoped>
 
 .table-page{
-padding:40px;
+padding:5px 20px 40px 40px;
 }
 
 .title{
 color:#0c3c60;
-margin-bottom:20px;
 font-weight:600;
+margin:0;
 }
 
 .table-container{
@@ -237,4 +268,42 @@ font-size:13px;
 color:#6b7280;
 }
 
+.search-bar{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.search-bar input{
+  padding: 10px 14px 10px 36px;
+  width:280px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+  outline:none;
+  font-size:14px;
+}
+
+.search-bar input:focus{
+  border-color:#0c3c60;
+}
+
+.header-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.search-input-wrapper{
+  position: relative;   
+  display: inline-block;
+}
+.search-icon{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#6b7280;
+  font-size:14px;
+  pointer-events:none;
+}
 </style>

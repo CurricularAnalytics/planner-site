@@ -115,7 +115,7 @@ editor:"Dr. Adams"
 <style scoped>
 
 .forms-page{
-padding:40px;
+padding:5px 40px;
 }
 
 .title{
@@ -151,10 +151,6 @@ td{
 padding:16px;
 border-bottom:1px solid #e5e7eb;
 font-size:15px;
-}
-
-tr:hover{
-background:#f8fafc;
 }
 
 .note{
